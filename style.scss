@@ -1,0 +1,1932 @@
+/*
+Theme Name: Xwegbe
+Theme URI: https://www.codeurcreatif.com
+Author: Codeur creatif
+Author URI: https://www.codeurcreatif.com
+Description: Thème personalisé pour reservations de logements
+Version: 1.0
+*/
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+$blue:  #071339;
+$yellow:  #D1B35B;
+$black:  #242424;
+$white: white;
+
+@mixin flex ($flex-direction:row) {
+    display: flex;
+    flex-direction: $flex-direction;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@mixin form{
+    width: 350px;
+    margin: 30px auto;
+    height: 400px;
+    padding-top: 0px;
+    border-radius: 10px;
+    background-color: $yellow;
+    display: block;
+    padding-top: 30px;
+    text-align: center;
+}
+
+@mixin content (){
+    width: 80%;
+    margin: auto;
+}
+
+@mixin title{
+    font-size: 2em;
+    margin: auto;
+    color: $blue;
+}
+
+@mixin label{
+    color: $white;
+    text-align: left;
+    font-size: bold;
+    margin: 10px auto 20px auto;
+    font-size: 1.2em;
+}
+
+@mixin input($background-color: $yellow, $border-color: $yellow){
+width: auto;
+border-radius: 5px;
+font-size: 1.5em;
+    height: 40px;
+    font-size: 1.3em;
+    cursor: pointer;
+color: $blue;
+margin: 0 auto;
+background-color: $background-color;
+border-color: $border-color;
+}
+
+@mixin button($color: $white, $background-color: $yellow, $border-color: $yellow){
+width: auto;
+border-radius: 5px;
+font-size: 1.5em;
+    height: 40px;
+    font-size: 1.3em;
+    cursor: pointer;
+color: $color;
+margin: 0 auto;
+background-color: $background-color;
+border-color: $border-color;
+}
+
+@mixin select{
+    color: $black;
+                width: auto;
+                height: 38px;
+                margin: 5px auto;
+                cursor: pointer;
+                border: 1px $black solid;
+                border-radius: 5px;
+                font-size: 1.1em;
+}
+
+@mixin image{
+    cursor: pointer;
+    margin: 20px auto;
+    border-radius: 10px;
+    transition: 500ms ease-in-out;
+}
+
+button{
+    color: white;
+    margin: 10px;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+    height: 40px;
+    width: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+
+h1{
+    font-family: 'Pacifico', 'sans-serif';
+    color: $blue;
+}
+
+h2{
+    font-size: 2.7em;
+    font-weight: bold;
+    width: 60%;
+    text-align: center;
+    margin: -90px auto;
+}
+
+h3{
+    color: $blue;
+    font-size: 1.9em;
+    font-weight: bold;
+}
+
+hr{
+    color: $blue;
+    margin: auto auto 10px auto;
+    width: 80%;
+    background-color: $blue;
+    height: 1px;
+}
+
+a{
+    color: $white;
+    text-decoration: none;
+}
+
+html, body{
+    font-family: 'Poppins', 'sans-serif';
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+}
+
+
+.view{
+    background-color: $blue;
+}
+
+.edit{
+    background-color: $yellow;
+}
+
+.trash{
+    background-color: red;
+}
+
+.new{
+    background: green;
+}
+
+.choice{
+    margin-left:  5px;
+}
+
+
+.top{
+    height:600px;
+    margin: 0px auto;
+    padding-top: 200px;
+    display: block;
+    width: 100%;
+    background-image: 
+    linear-gradient(rgba(7, 19, 57, 0.8),
+     rgba(7, 19, 57, 0.7)),
+            url("https://i.ibb.co/yS2hND7/appartement1-5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    
+        h1{
+        font-size: 2em;
+        margin: auto;
+        width: 70%;
+        color: $white;
+
+            span{
+                font-family: 'Pacifico', 'sans-serif';
+                font-style: italic;
+                color: $yellow;
+                font-size: 2.2em;
+            }
+        }
+
+    &__research-form{
+        @include flex;
+        justify-content: center;
+        margin: 90px auto;
+        
+
+        &__label{
+            color: $white;
+            margin: auto 20px;
+
+            input{
+                @include input($white, $black);
+                color: $black;
+                margin: 5px auto;
+                width: 180px;
+            }
+
+            select{
+                @include select;
+                width: 180px;
+            }
+
+            .fa-search{
+                display: none;
+            }
+        }
+
+        &__submit{
+            margin: auto 20px;
+            height: 45px;
+            @include button($white, $yellow, $yellow);
+           
+        }
+    }
+
+}
+
+.about-section{
+   @include flex(column);
+
+   &__title{
+       color: $blue;
+       margin: 90px auto;
+       font-weight: 800;
+   }
+
+   &__content{
+       @include flex();
+       @include content;
+       margin: 0 auto;
+
+       &__picture{
+           display: block;
+           flex: 1;
+
+          .background{
+            position: relative;
+            height: 400px;
+            width: 350px;
+            background-color: #071339;
+            border-radius: 15px;
+            img{
+                width: 400px;
+                height: 300px;
+                border-radius: 15px;
+                position: absolute;
+                top: 50px;
+                left: 30px;
+            }
+          }
+
+       }
+
+       &__details{
+           display: block;
+           flex: 1;
+
+           img{
+               width: 80px;
+               height: 50px;
+               margin: 0 auto 50px 0;
+           }
+
+           .title{
+               margin: auto 0;
+               width: 70%;
+           }
+
+           .text{
+               width: 100%;
+               text-align: justify;
+               font-size: 1.2em;
+               line-height: 1.3em;
+               margin: 40px auto auto 0;
+           }
+
+           .link{
+              @include input($yellow, $yellow);
+            
+            text-align: center;
+            margin: 40px auto;
+                a{
+                    margin: auto;
+                }
+           }
+       }
+   }
+}
+
+.reasons-section{
+    @include flex(column);
+    padding-top: 30px;
+ 
+    &__title{
+        color: $blue;
+        margin: 60px auto 50px auto;
+        font-weight: 800;
+        font-size: 1.9em;
+    }
+ 
+    &__content{
+        @include flex();
+        @include content;
+ 
+        &__picture{
+            display: block;
+            flex: 1;
+ 
+           .background{
+             position: relative;
+             height: 400px;
+             width: 350px;
+             background-color: #071339;
+             border-radius: 15px;
+             float: right;
+             img{
+                 width: 400px;
+                 height: 300px;
+                 border-radius: 15px;
+                 position: absolute;
+                 top: 50px;
+                 right: 30px;
+             }
+           }
+ 
+        }
+ 
+        &__details{
+            display: block;
+            flex: 1;
+ 
+            img{
+                width: 80px;
+                height: 50px;
+                margin: 0 auto 50px 0;
+            }
+ 
+            .title{
+                margin: 10px auto;
+            }
+ 
+            .text{
+                width: 100%;
+                font-size: 1.2em;
+                text-align: justify;
+                line-height: 1.3em;
+                margin: 40px auto auto 0;
+            }
+ 
+            .link{
+               @include input($yellow, $yellow);
+             
+             text-align: center;
+             margin: 40px auto;
+                 a{
+                     margin: auto;
+                 }
+            }
+        }
+    }
+ }
+
+.appartments{
+    width: 100%;
+    padding-top: 100px;
+    @include flex(column);
+
+    &__title{
+        @include title;
+    }
+
+    &__content{
+        margin: auto;
+        width: 100%;
+        @include flex();
+        position: relative;
+       
+        &__details{
+            padding-top: 30px;
+            margin: auto 0;
+            width: 65%;
+            
+            .item{
+                width: 550px;
+                margin: auto auto 40px auto;
+                
+                img{
+                    width: 540px;
+                    height: 300px;
+                    border-radius: 10px;
+                    margin: auto;
+                }
+
+                .appartment_name{
+                    @include title();
+                    font-size: 1.9em;
+                    font-weight: 700;
+                    width: 90%;
+                    margin: 15px auto 0 0;
+                }
+
+                .daily_price{
+                    font-size: 1.1em;
+                    margin-bottom: 10px;
+                    color: $black;
+
+                    span{
+                        color: $yellow;
+                        font-weight: 800;
+                        font-size: 2em;
+                    }
+                }
+
+                .extract{
+                    font-size: 1.2em;
+                    width: 90%;
+                    line-height: 1.3em;
+                    text-align: justify;
+                }
+
+                .rooms{
+                    margin: 10px auto 15px auto;
+                    font-size: 1.1em;
+
+                    span{
+                        font-size: 1.5em;
+                        color: $yellow;
+                        font-weight: bold;
+                    }
+                }
+
+                .buttons{
+                    @include flex;
+                    width: 450px;
+
+                    .book{
+                        @include input($blue, $blue);
+                    }
+
+                    .book:hover{
+                        @include input($yellow, $yellow);
+                    }
+
+                    .details{
+                        @include input($yellow, $yellow);
+                        width: 180px;
+                    }
+
+                    .details:hover{
+                        @include input($blue, $blue);
+                    }
+                }
+            }
+        }
+
+        &__form{
+            @include form;
+            height: 400px;
+            right: 50px;
+            width: 280px;
+            margin: 40px auto;
+            background-color: $yellow;
+            padding-top: 20px;
+            position: absolute;
+
+            .form_label{
+            @include label;
+            margin: 0px auto;
+                input{
+                    @include input($white, $white);
+                    color: $blue;
+                    width: 200px;
+                }
+
+                select{
+                    @include input($white, $white);
+                    color: $blue;
+                    width: 200px;
+                }
+            }
+
+            .form_submit{
+                @include input($blue, $blue);
+                color: $white;
+                width: 200px;
+                height: 50px;
+                margin: 20px auto;
+            }
+
+            .form_submit:hover{
+                @include input($white, $white);
+                width: 200px;
+                height: 50px;
+                color: $blue;
+                margin: 40px auto;
+            }
+
+            }
+        }
+}
+
+.appartment{
+    display: block;
+    width: 100%;
+    padding-top: 0;
+
+    &__content{
+        @include flex;
+        margin-bottom: 40px;
+        background-color: red;
+
+        &__details{
+            width: 60%;
+            margin: 10px auto;
+            
+            p{
+                img{
+                    margin: auto 20px auto auto;
+                    width: 30px;
+                }
+            }
+
+            .appartment_name{
+               font-size: 2em;
+               @include title();
+            }
+
+            .extract{
+                text-align: justify;
+                font-size: 1.1em; 
+            }
+
+            .appartment_description{
+               text-align: justify;
+               font-size: 1.1em; 
+            }
+
+            .book{
+                text-align: center;
+                @include button($white, $blue, $blue);
+
+                a{
+                    color:$white;
+                }
+            }
+
+        }
+
+        &__form{
+            @include form;
+            display: none;
+
+            .form_label{
+            @include label;
+
+                input{
+                    @include input($white, $white);
+                    color: $blue;
+                    width: 200px;
+                }
+
+                select{
+                    @include input($white, $white);
+                    color: $blue;
+                    width: 200px;
+                }
+            }
+
+            .form_submit{
+                @include input($blue, $blue);
+                color: $white;
+                width: 200px;
+                height: 50px;
+                margin: 40px auto;
+            }
+
+            .form_submit:hover{
+                @include input($white, $white);
+                width: 200px;
+                height: 50px;
+                color: $blue;
+                margin: 40px auto;
+            }
+        }
+    }
+
+    &__gallery{
+        width: 100%;
+        display: block;
+
+        &__top{
+            @include flex;
+
+            img{
+                width: 400px;
+                height: auto;
+                @include image();
+            }   
+
+            img:hover{
+                transform: scale(1.1);
+            }
+        }
+
+        &__bottom{
+            @include flex;
+
+            img{
+                width: 600px;
+                height: 350px;
+                @include image;
+            }
+
+            img:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.about{
+    width: 100%;
+    @include flex();
+    padding-top: 100px;
+    text-align: center;
+    display: block;
+
+    &__title{
+        @include title();
+    }
+
+    &__content{
+        @include flex;
+        flex-direction: row;
+        width: 80%;
+        margin: 20px auto;
+
+            img{
+                @include image();
+                width: 350px;
+                height: 250px;
+            }
+    
+        &__text{
+            flex: 1;
+
+            .paragraph{
+                width: 80%;
+                font-size: 1.5em;
+                margin:  20px auto;
+                text-align: justify;
+            }
+        }
+   }
+}
+
+.dashboard{
+    width: 100%;
+    height: auto;
+    @include flex;
+    margin: 10px auto;
+  
+    &__menu{
+      width:25%;
+      height: auto;
+      display: block;
+  
+      &__list{
+        height: 228px;
+        width: 220px;
+        margin: auto;
+        border: 2px $blue solid;
+        border-radius: 10px;
+        overflow: hidden;
+  
+        .menu-link{
+          height: 30px;
+          width: 100%;
+          cursor: pointer;
+          text-align: left;
+          padding-left: 5px;
+          padding-top: 15px;
+          border-bottom: 1px $blue solid;
+  
+          a{
+            color: $black;
+          }
+        }
+  
+        .menu-link:hover{
+          background-color: $blue;
+          a{
+            color: $white;
+          }
+        }
+  
+        .menu-link-active{
+          background-color: $blue;
+          a{
+            color: $white;
+          }
+        }
+      }
+    }
+  
+    &__main{
+      display: block;
+      width: 75%;
+      border-radius: 20px;
+      text-align: center;
+  
+      &__heading{
+        background-color: $black;
+        height: 250px;
+        width: 100%;
+        @include flex;
+        padding-top: 50px;
+        padding-left: 40px;
+  
+        .dashboard-title{
+          h1{
+            @include title();
+            color: $yellow
+          }
+  
+          p{
+            color: $white;
+            font-size: 1.1em;
+          }
+        }
+      }
+  
+      &__background{
+        background-color: $white;
+        height: 300px;
+        width: 100%;
+        position: relative;
+  
+        .boxes{
+          @include content;
+          @include flex;
+          margin: -70px auto;
+          position: absolute;
+          left: 0;
+          right: 0;
+  
+          &__item{
+            height: 150px;
+            width: 200px;
+            border: 1px $white solid;
+            box-shadow: 0px 10px 12px #00000029;
+            border-radius: 10px;
+            margin: auto;
+            background-color: $white;
+            padding-top: 50px;
+  
+            span{
+              color: $blue;
+              font-size: 3em;
+              font-family: 'roboto', 'sans-serif';
+              
+            }
+  
+            p{
+              margin: 40px auto;
+              font-size: 1.2em;
+              color: $black;
+              font-weight: bold;
+            }
+          }
+        }
+  
+        .transfert{
+          @include content;
+          @include flex;
+          flex-direction: column;
+          padding-top: 30px;
+  
+          &__input{
+            @include flex;
+            width: 100%;
+            padding-left: 0;
+            text-align: left;
+  
+            label{
+              margin: auto;
+  
+              input{
+                @include input();
+                width: 130px;
+              }
+            }
+  
+              button{
+                @include input;
+                border-radius: 10px;
+              }
+          }
+  
+          &__result{
+              width: 100%;
+              margin: 30px auto;
+              @include flex;
+  
+              label{
+                margin: auto;
+                span{
+                  font-weight: bold;
+                }
+              }
+            }
+  
+            &__button{
+              background-color: $blue;
+              color: $white;
+              width: 150px;
+              height: 40px;
+              font-size: 1.2em;
+              border-radius: 10px;
+              border-radius: auto;
+              margin-left: 50px;
+            }
+  
+          }
+  
+        .ebe{
+          width: 100%;
+          padding-top: 30px;
+          @include flex;
+          flex-direction: column;
+  
+          &__input{
+            @include content;
+            text-align: left;
+  
+            label{
+              margin: auto;
+  
+              select{
+                @include select;
+                width: 130px;
+              }
+  
+              input{
+                @include input;
+                width: 130px;
+                height: 30px;
+              }
+            }
+  
+           
+          }
+  
+          button{
+            width: 130px;
+            height: 40px;
+            background-color: $blue;
+            color: $white;
+            margin: auto 0;
+            border-radius: 10px;
+          }
+        }
+  
+        .bills{
+          padding-top: 30px;
+          width: 100%;
+  
+          &__content{
+            @include content();
+            margin: auto;
+            @include flex;
+  
+            li{
+              color: $black;
+              font-weight: bold;
+            }
+          }
+        }
+  
+        }
+      }
+}
+
+.add{
+    width: 100%;
+    text-align: center;
+
+    &__back-link{
+        color: $black;
+        font-size: 1.2em;
+
+        img{
+            width: 80px;
+            margin: auto 10px;
+        }
+
+        a{
+            color: $black;
+        }
+    }
+
+    &__form{
+        @include form;
+        height: auto;
+        width: 500px;
+        text-align: left;
+        padding-left: 30px;
+        padding-right: 30px;
+        color: $white;
+
+        &__label{
+            @include label;
+            color: $white;
+
+            input{
+                color: $blue;
+                @include input($white, $white);
+            }
+
+            select{
+                @include select;
+                height: 30px;
+                width: 200px;
+            }
+
+            .extract{
+                width: 480px;
+                height: 150px;
+                color: $black;
+                padding-top: 0px;
+            }
+
+            .appartement__description{
+                width: 480px;
+                height: 250px;
+                color: $black;
+                padding-top: 0px;
+            }
+
+
+        }
+
+        &__details{
+            @include flex;
+            width: auto;
+            margin: auto 0;
+            
+            label{
+                margin: auto 10px;
+                .rooms{
+                    @include input($white, $white);
+                    width: 60px;
+                    height: 30px;
+                }
+
+                .daily_price{
+                    @include input($white, $white);
+                    width: 120px;
+                    height: 30px;
+                }
+
+                .appartement_name{
+                    @include input($white, $white);
+                    width: 200px;
+                    height: 30px;
+                    
+                }
+            }
+        }
+
+        &__pictures{
+            @include flex;
+
+            label{
+                input{
+                    @include input($white, $white);
+                    width: 90px;
+                    height: 30px;
+                }
+            }
+        }
+
+        &__button{
+            @include input($blue, $blue);
+            color: $white;
+            margin: 40px auto;
+        }
+
+        &__button:hover{
+            @include input($white, $white);
+            color: $blue;
+            margin: 40px auto;
+        }
+    }
+}
+
+.delete{
+    width: 100%;
+
+    &_title{
+        @include title();
+    }
+
+    &__form{
+        @include form;
+        width: 320px;
+        color: $white;
+        
+        &__label{
+            input{
+                @include input($white, $white);
+                width: 120px;
+                height: 30px;
+                color: $black;
+            }
+        }
+
+        &__button{
+            @include input($blue, $blue);
+            color: $white;
+            margin: 30px auto;
+        }
+
+        &__button:hover{
+            @include input($white, $white);
+            color: $blue;
+            margin: 30px auto;
+        }
+
+
+        }
+    }
+
+.reservation{
+    padding-top: 120px;
+
+    
+}
+
+.gallery{
+    width: 100%;
+    height: auto;
+    padding-top: 100px;
+    display: block;
+    text-align: center;
+    
+    &__title{
+        @include title();
+    }
+
+    &__items{
+        @include flex();
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+        margin-bottom: 20px;
+
+        img{
+            height: 250px;
+            margin: 15px;
+            width: 300px;
+            border-radius: 10px;
+        }
+    }
+}
+
+.contact{
+    width: 80%;
+    margin: auto auto 20px auto;
+    display: block;
+    padding-top: 100px;
+
+    label{
+        font-size: 1.1em;
+        margin: 15px auto;
+
+        input{
+
+        }
+
+        button{
+            @include button;
+        }
+    }
+
+    textarea{
+        margin: 15px auto;
+    }
+}
+
+.post{
+    padding-top: 110px;
+    margin: 15px auto;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    min-height:  90vh;
+
+    &__title{
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    &__text{
+        text-align: center;
+
+    }
+}
+
+.posts-section{
+    width: 100%;
+    padding: 10px;
+
+    .item{
+        width: 250px;
+        margin: auto;
+
+        &__title{
+            margin: 10px auto;
+        }
+
+        img{
+            width: 200px;
+            height: 150px;
+            margin: 10px auto;
+        }
+
+        &__text{
+            text-align: center;
+            margin: 10px auto;
+        }
+    }
+}
+
+.list{
+    width: 100%;
+    text-align: center;
+    margin: 90px auto;
+    position: relative;
+
+    &__box{
+        width: 700px;
+        margin: auto;
+        height: auto;
+        text-align: center;
+        top: 30px;
+        box-shadow: 0px 10px 12px #00000029;
+        border-radius: 15px;
+
+        &__form{
+            width: 550px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+    }
+
+    &__content{
+        width: 80%;
+        margin: 20px auto;
+        
+
+        &__title{
+            @include title();
+        }
+
+        &__options{
+            margin: 15px auto;
+        }
+    }
+}
+
+
+
+.table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid #ddd;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: $blue;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+/*responsive*/
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+
+ .footer{
+     @include flex(column);
+     width: 100%;
+     background-color: $yellow;
+     margin: 60px auto 0 auto;
+
+     &__top{
+         height: 50px;
+         background-color: $blue;
+     }
+
+     &__bottom{
+         height: 200px;
+         @include flex;
+         padding-top: 20px;
+         @include content();
+
+         &__infos{
+             .footer-logo{
+                 display: block;
+                 padding-top: 5px;
+                 width: 150px;
+                 padding-left: 20px;
+                 background-color: $blue;
+                
+                 img{
+                    width: 90px;
+                    height: 35px;
+                    margin: auto;
+                 }
+             }
+
+             .footer-adress{
+                 margin: 8px auto;
+                 @include flex;
+                 width: auto;
+                 img{
+                     width: 30px;
+                     margin: auto 0 auto 0;
+                 }
+                 
+                 p{
+                     color: $blue;
+                     margin: auto 0;
+                     text-align: left;
+                 }
+            
+             }
+         }
+
+         &__menu{
+             h3{
+                 color: $blue;
+
+             }
+
+             ul {
+                 margin:8px auto;
+                 li {
+                    list-style: none;
+                    a{
+                        color: $blue;
+                        
+
+                    }
+                 }
+             }
+         }
+     }
+
+     &__copyright{
+        margin: auto;
+     }
+ }
+
+ 
+ /*responsive for 1280px*/
+ @media screen and (min-width: 1280px){
+    .top{     
+        &__research-form{
+            width: 90%;
+        }
+    }
+ 
+ }
+
+ /*responsive for 1024px*/
+ @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    h2{
+        font-size: 2.4em;
+        width: 80%;
+    }
+   
+    .top{
+        
+        &__research-form{
+            width: 90%;
+
+            &__label{
+                input{
+                    width: 130px;
+                }
+            }
+        }
+    }
+         
+
+    .about-section{
+        width: 100%;
+
+        &__title{
+            width: 70%;
+            text-align: center;
+        }
+        
+        &__content{
+            margin: 0 auto;
+            &__picture{
+                .background{
+                    width: 250px;
+                    height: 300px;
+
+                    img{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+            } 
+        
+            &__details{
+                img{
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 auto 0 auto;
+                }
+                
+                .title{
+                    width: 100%;
+                }    
+
+                .text{
+                    text-align: justify;
+                    margin: 5px auto;
+                }
+
+                .link{
+                    margin: 10px auto;
+
+                }
+            }
+        }
+    }
+
+    .reasons-section{
+        width: 100%;
+
+        &__title{
+        }
+        
+        &__content{
+            &__picture{
+                margin: 70px auto;
+                .background{
+                    width: 250px;
+                    height: 300px;
+
+                    img{
+                        width: 300px;
+                        height: 200px;
+                    }
+                }
+            } 
+        
+            &__details{
+                img{
+                    width: 40px;
+                    height: 40px;
+                    margin: 0 auto 0 auto;
+                }
+                
+                .title{
+                    width: 100%;
+                }    
+
+                .text{
+                    margin: 5px auto;
+                }
+
+                .link{
+                    margin: 10px auto;
+
+                }
+            }
+        }
+    }
+
+    .appartments{
+        &__content{
+            &__form{
+                margin: 30px auto;
+            }
+        }
+    }
+
+    .footer{
+        margin: 50px auto;  
+
+_        &__bottom{
+            &__infos{
+                .footer-logo{
+                    width: 130px;
+                    
+                    img{
+                        width: 100px;
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+ /*responsive for 768px*/
+ @media screen and (min-width:768px)and (max-width: 1023px) {
+   h2{
+       font-size: 2.3em;
+   }
+
+   h3{
+       font-size: 1.7em;
+   }
+   
+    .top{
+        height: 550px;
+        padding-top: 170px;
+
+
+        h1{
+            width: 90%;
+            font-size: 1.8em;
+        }
+
+        &__research-form{
+            width: 95%;
+            
+            &__label{
+                input{
+                    width: 100px;
+                    margin: auto 10px auto auto;
+                }
+
+                select{
+                    width: 100px;
+                }
+
+                .fa-search{
+                    display: none;
+                }
+            }
+
+            &__submit{
+                
+            }
+        }
+    }
+
+    .about-section{
+        margin: -20px auto;
+
+        &__title{
+            width: 90%;
+        }
+
+        &__content{
+            width: 95%;
+            padding: 5px;
+
+            margin: -70px auto;
+            &__picture{
+                margin: 30px auto;
+                .background{
+                    width: 260px;
+                    height: 340px;
+
+                    img{
+                        width: 290px;
+                        height: 250px;
+                    }
+                }
+            }
+
+            &__details{
+                img{
+                    width: 50px;
+                    height: 50px;
+                    margin: 20px auto 10px auto;
+                }
+
+                .title{
+                    margin: 0 auto 0 0 ;
+                    width: 100%;
+                }
+
+                .text{
+                    margin: 10px auto 0  0;
+                    width: 100%;
+                    font-size: 1.1em;
+                }
+            }
+
+        }
+    }
+
+    .reasons-section{
+        margin: 40px auto;
+
+        &__title{
+            width: 70%;
+        }
+
+        &__content{
+            width: 95%;
+            padding: 5px;
+
+            &__picture{
+                margin: 30px auto;
+                .background{
+                    width: 260px;
+                    height: 340px;
+
+                    img{
+                        width: 290px;
+                        height: 250px;
+                    }
+                }
+            }
+
+            &__details{
+              
+                .title{
+                    margin: 80px auto 0 0 ;
+                }
+
+                .text{
+                    margin: 10px auto 0  0;
+                    width: 90%;
+                    font-size: 1.1em;
+                    line-height: 1.2em;
+
+                    ul{
+                        display: block;
+                        li{
+                            display: block;
+                        }
+                    }
+                }
+
+                
+
+                .link{
+                    margin: 20px auto;
+                }
+            }
+
+        }
+
+
+    }
+
+    .appartments{
+        &__content{
+            flex-direction: column;
+
+            &__details{
+                width: 100%;
+                text-align: left;
+                margin: auto;
+
+                .item{
+                    margin: 30px auto;
+                    width: 100%;
+
+                    img{
+                        width: 600px;
+                        height: 320px;
+                        margin: auto;
+                    }
+                    
+                    .appartment__name{
+                        margin: auto;
+                        text-align: left;
+                    }
+
+                    .extract{
+                        margin: auto 0;
+                        text-align: left;
+                    }
+                }
+            }
+            &__form{
+                margin: 30px auto;
+                width: 300px;
+                position: relative;
+                
+            }
+        }
+    }
+
+    .footer{
+        &__bottom{
+            height: auto;
+            flex-direction: column;
+            text-align: left;
+            width: 100%;
+            height: 600px;
+            display: block;
+
+            &__infos{
+                flex: 1;
+                width: 50%;
+                text-align: left;
+                height: 200px;
+                margin: auto;
+            }
+
+            &__menu{
+                flex: 1;
+                height: 200px;
+                width: 50%;
+                margin: auto;
+                text-align: left;
+
+                ul{
+                    li{
+                        color: $blue;
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+ }
+
+
+ /*responsive for 350px*/
+ @media screen and (min-width:350px)and (max-width: 767px) {
+    h2{
+        font-size: 2.1em;
+        width: 90%;
+        margin: -50px auto;
+    }
+
+    h3{
+        
+    }
+    
+    .top{
+       padding-top: 150px;
+       height: 750px;
+
+       h1{
+           font-size: 1.8em;
+           width: 90%;
+
+           span{
+               font-size: 1.6em;
+           }
+       }
+
+       &__research-form{
+           margin: 40px auto;
+
+           &__label{
+               margin: 10px auto;
+               button{
+                   width: 180px;
+               }
+
+               input{
+                   margin: 5px auto;
+               }
+
+               .look-icon{
+                   border: 1px solid $black;
+                   width: 100px;
+                   text-align: center;
+                   padding-top: 10px;
+                   margin: auto;
+                   border-radius: 10px;
+                   height: 40px;
+                   background-color: $yellow;
+                   font-size: 1.5em;
+               }
+           }
+           
+       }
+   }
+
+   .about-section{
+       width: 100%;
+       text-align: center;
+       margin: 40px auto;
+
+       &__title{
+           width: 90%;
+           margin: auto;
+       }
+
+       &__content{
+           width: 90%;
+           margin: 40px auto;
+           text-align: center;
+           &__picture{
+               .background{
+                   width: 280px;
+                   height: 280px;
+
+                   img{
+                       width: 290px;
+                       height: 230px;
+                       top: 30px;
+                   }
+
+                   .text{
+                       margin: auto;
+                   }
+               }
+           }
+
+           &__details{
+            margin: 30px auto;
+
+            img{
+                width: 50px;
+                margin: auto;
+            }
+
+            .title{
+                width: 100%;
+                margin: auto;
+            }
+
+            .text{
+                margin: auto;
+            }
+
+            .link{
+                margin: 5px auto;
+            }
+
+           }
+
+
+       }
+   }
+
+   .reasons-section{
+       width: 100%;
+       text-align: center;
+       margin: 5px auto;
+
+       &__content{
+           text-align: center;
+           width: 100%;
+
+           &__picture{
+               text-align: center;
+                width: 90%;
+                margin: 30px auto;
+                    .background{
+                        width: 300px;
+                        height: 280px;
+                        margin: auto 20px auto auto;
+            
+                        img{
+                            width: 290px;
+                            height: 230px;
+                            top: 30px;
+                            margin: auto;
+                        }
+
+                        .title{
+                            margin: auto;
+                        }
+                    }
+            }
+
+           &__details{
+                width: 90%;
+                margin: auto;
+
+                img{
+                    width: 50px;
+                    margin: auto;
+                }
+
+                .title{
+                    margin: -10px auto;
+                    width: 90%;
+                }
+
+                .text{
+                    margin: 10px auto;
+                    width: 90%;
+                }
+
+                .link{
+                    margin: 10px  auto;
+                }
+            } 
+        }
+   }
+
+   .appartments{
+
+    &__content{
+        flex-direction: column;
+        width: 100%;
+
+        &__details{
+            width: 100%;
+            text-align: left;
+            margin: auto;
+           
+
+            .item{
+                margin: 30px auto;
+                width: 100%;
+
+                img{
+                    width: 330px;
+                    height: 220px;
+                    margin: auto;
+                }
+                
+                .appartment__name{
+                    margin: auto;
+                    text-align: left;
+                }
+
+                .daily_price{
+                    span{
+                        font-size: 1.4em;
+                    }
+                }
+
+                .extract{
+                    margin: auto 0;
+                    text-align: left;
+                }
+
+                .buttons{
+                    flex-direction: column;
+                    text-align: left;
+
+                    .book, .details{
+                        margin: 10px auto auto 5px ;
+                    }
+
+                }
+            }
+        }
+        &__form{
+            margin: 30px auto;
+            width: 300px;
+            position: relative;
+            
+        }
+    }
+}
+ }
+
+ 
