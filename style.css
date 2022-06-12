@@ -90,6 +90,24 @@ html, body {
   margin-left: 5px;
 }
 
+.back {
+  margin: auto;
+  width: 80px;
+  cursor: pointer;
+}
+
+.back p {
+  font-size: 1.7em;
+  color: #071339;
+  font-weight: bold;
+}
+
+.back:hover p {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  color: #D1B35B;
+}
+
 .top {
   height: 600px;
   margin: 0px auto;
@@ -1709,28 +1727,26 @@ html, body {
   position: relative;
 }
 
-.list__box {
-  width: 700px;
-  margin: auto;
-  display: block;
-  height: auto;
-  text-align: center;
-  top: 30px;
-  -webkit-box-shadow: 0px 10px 12px #00000029;
-          box-shadow: 0px 10px 12px #00000029;
-  border-radius: 15px;
-  display: none;
-}
-
-.list__box__form {
-  width: 550px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
 .list__content {
   width: 80%;
   margin: 20px auto;
+  top: 20px;
+}
+
+.list__content__form {
+  width: 90%;
+  padding: 10px;
+  margin: 30px auto;
+  -webkit-box-shadow: 0px 5px 28px #00000029;
+          box-shadow: 0px 5px 28px #00000029;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.list__content__form h2 {
+  font-size: 2em;
+  margin: auto;
+  color: #071339;
 }
 
 .list__content__title {
